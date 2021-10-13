@@ -30,6 +30,8 @@ using Skoruba.IdentityServer4.Admin.EntityFramework.Configuration.PostgreSQL;
 using Skoruba.IdentityServer4.Admin.EntityFramework.Configuration.SqlServer;
 using Skoruba.IdentityServer4.Shared.Configuration.Authentication;
 using Skoruba.IdentityServer4.Shared.Configuration.Configuration.Identity;
+using IdentityServer4.Services;
+using AuthService.Shared.Overrides;
 
 namespace AuthService.STS.Identity.Helpers
 {
@@ -326,6 +328,8 @@ namespace AuthService.STS.Identity.Helpers
             where TUserIdentity : class
         {
             var advancedConfiguration = configuration.GetSection(nameof(AdvancedConfiguration)).Get<AdvancedConfiguration>();
+
+            services.AddTransient<IProfileService, IdentityProfileService>();
 
             var builder = services.AddIdentityServer(options =>
                 {
