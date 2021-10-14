@@ -22,6 +22,10 @@
         <PackageReference Include="Skoruba.IdentityServer4.Admin.BusinessLogic.Identity" Version="2.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AuthService.Admin.EntityFramework.Shared\AuthService.Admin.EntityFramework.Shared.csproj" />
+    </ItemGroup>
+
 </Project>
 
 

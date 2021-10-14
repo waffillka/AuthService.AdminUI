@@ -77,18 +77,18 @@ namespace AuthService.STS.Identity
             {
                 app.UseHsts();
             }
-
+            
+            //app.UseHttpsRedirection();
             app.UsePathBase(Configuration.GetValue<string>("BasePath"));
 
             // Add custom security headers
             app.UseSecurityHeaders(Configuration);
-
+            app.UseCors("CorsPolicy");
             app.UseStaticFiles();
             UseAuthentication(app);
             app.UseMvcLocalizationServices();
 
-            app.UseCors("CorsPolicy");
-            app.UseHttpsRedirection();
+            
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoint =>
