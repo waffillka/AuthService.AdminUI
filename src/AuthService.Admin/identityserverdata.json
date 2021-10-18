@@ -62,73 +62,119 @@
             }
         ],
         "ApiScopes": [
-            {
-                "Name": "Bookcrossing_api",
-                "DisplayName": "Bookcrossing_api",
-                "Required": true,
-                "UserClaims": [
-                    "role",
-                    "name"
-                ]
-            }
+          {
+            "Name": "Bookcrossing_api",
+            "DisplayName": "Bookcrossing_api",
+            "Required": true,
+            "UserClaims": [
+              "role",
+              "name"
+            ]
+          },
+          {
+            "Name": "BackEndApp_api",
+            "DisplayName": "BackEndApp_api",
+            "Required": true,
+            "UserClaims": [
+              "role",
+              "name"
+            ]
+          }
         ],
-        "ApiResources": [ 
-            {
-                "Name": "Bookcrossing_api",
-                "Scopes": [
-                    "Bookcrossing_api"
-                ]
-            }
+        "ApiResources": [
+          {
+            "Name": "Bookcrossing_api",
+            "Scopes": [
+              "Bookcrossing_api"
+            ]
+          },
+          {
+            "Name": "BackEndApp_api",
+            "Scopes": [
+              "BackEndApp_api"
+            ]
+          }
         ],
         "Clients": [
-            {
-                "ClientId": "Bookcrossing",
-                "ClientName": "Bookcrossing",
-                "ClientUri": "https://localhost:44303",
-                "AllowedGrantTypes": [
-                    "authorization_code"
-                ],
-                "RequirePkce": true,
-                "ClientSecrets": [
-                    {
-                        "Value": "ADEB2CE31785CA695F555F1D2AB7F"
-                    }
-                ],
-                "RedirectUris": [
-                    "https://localhost:44303/signin-oidc"
-                ],
-                "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
-                "PostLogoutRedirectUris": [
-                    "https://localhost:44303/signout-callback-oidc"
-                ],
-                "AllowedCorsOrigins": [
-                    "https://localhost:44303"
-                ],
-                "AllowedScopes": [
-                    "openid",
-                    "email",
-                    "profile",
-                    "roles"
-                ]
-            },
-            {
-                "ClientId": "Bookcrossing_api_swaggerui",
-                "ClientName": "Bookcrossing_api_swaggerui",
-                "AllowedGrantTypes": [
-                    "authorization_code"
-                ],
-                "RequireClientSecret": false,
-                "RequirePkce": true,
-                "RedirectUris": [
-                    "https://localhost:44302/swagger/oauth2-redirect.html"
-                ],
-                "AllowedScopes": [
-                    "Bookcrossing_api"
-                ],
-                "AllowedCorsOrigins": [
-                    "https://localhost:44302"
-                ]
-            }
+          {
+            "ClientId": "Bookcrossing",
+            "ClientName": "Bookcrossing",
+            "ClientUri": "https://localhost:44303",
+            "AllowedGrantTypes": [
+              "authorization_code"
+            ],
+            "RequirePkce": true,
+            "ClientSecrets": [
+              {
+                "Value": "ADEB2CE31785CA695F555F1D2AB7F"
+              }
+            ],
+            "RedirectUris": [
+              "https://localhost:44303/signin-oidc"
+            ],
+            "FrontChannelLogoutUri": "https://localhost:44303/signout-oidc",
+            "PostLogoutRedirectUris": [
+              "https://localhost:44303/signout-callback-oidc"
+            ],
+            "AllowedCorsOrigins": [
+              "https://localhost:44303"
+            ],
+            "AllowedScopes": [
+              "openid",
+              "email",
+              "profile",
+              "roles"
+            ]
+          },
+          {
+            "ClientId": "Bookcrossing_api_swaggerui",
+            "ClientName": "Bookcrossing_api_swaggerui",
+            "AllowedGrantTypes": [
+              "authorization_code"
+            ],
+            "RequireClientSecret": false,
+            "RequirePkce": true,
+            "RedirectUris": [
+              "https://localhost:44302/swagger/oauth2-redirect.html"
+            ],
+            "AllowedScopes": [
+              "Bookcrossing_api"
+            ],
+            "AllowedCorsOrigins": [
+              "https://localhost:44302"
+            ]
+          },
+          {
+            "ClientId": "ClientApp",
+            "ClientName": "BookcrossingClient",
+            "AllowedGrantTypes": [
+              "implicit"
+            ],
+            "RequireClientSecret": true,
+            "RequirePkce": false,
+            "ClientSecrets": [
+              {
+                "Value": "505fb9a4-27b4-4612-df6d-ca35fec54464"
+              }
+            ],
+            "RedirectUris": [
+              "http://localhost:4200"
+            ],
+            "FrontChannelLogoutUri": "http://localhost:4200/home",
+            "PostLogoutRedirectUris": [
+              "http://localhost:4200"
+            ],
+            "AllowedScopes": [
+              "BackEndApp_api",
+              "openid",
+              "email",
+              "profile",
+              "roles"
+            ],
+            "AllowedCorsOrigins": [
+              "https://localhost:44302"
+            ]
+          }
         ]
     }
 }
