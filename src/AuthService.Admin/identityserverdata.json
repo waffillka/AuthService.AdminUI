@@ -72,7 +72,7 @@
                 ]
             }
         ],
-        "ApiResources": [
+        "ApiResources": [ 
             {
                 "Name": "Bookcrossing_api",
                 "Scopes": [
